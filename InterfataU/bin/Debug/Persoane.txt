@@ -1,0 +1,5 @@
+Mihai Rusu;Angajat;James si Piersica Uriasa.Roald Dahl.1.Actiune Tragedie,35 Mai.Erich Kastner.3.Istorie,Un şmecher la lecţie.Mircea Sântimbreanu.1.Actiune Comedie
+Turcu Elena;Elev;Un şmecher la lecţie.Mircea Sântimbreanu.0.Actiune Comedie,Robinson Crusoe.Daniel Defoe.3.Actiune Aventura,James si Piersica Uriasa.Roald Dahl.0.Actiune Tragedie
+Stefan Florea;Angajat
+Mihai Ion;Elev;Greierele şi furnica.Marin Sorescu.3.Actiune Aventura Comedie,Străinul.Albert Camus.1.Actiune Aventura,Din copilarie.Mark Twain.1.Actiune Drama Aventura Comedie
+Dsad;Student
