@@ -237,6 +237,22 @@ namespace InterfataU
             }
 
         }
+        public string FormatLB(Carte book)
+        {
+
+            string result = book.Titlu;
+            if (book.Titlu.Length > 18)
+            {
+                result = book.Titlu.Substring(0, 17) + "..";
+
+            }
+            string line = string.Format("{0,-4}", book.ID.ToString());
+            line += string.Format("{0,-20}", result);
+            line += string.Format("{0,-20}", book.Autor);
+            line += string.Format("{0,-20}", book.Exemplare.ToString());
+            return line;
+
+        }
 
         private void dataAdaugariiToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -255,6 +271,29 @@ namespace InterfataU
                 date.ShowDialog();
             }
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void filtreazaDupaDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+            var obj = new SortByDate();
+            obj.ShowDialog();
+            var dates = obj.GetDates;
+            if (dates.Count!=0)
+            {
+                ListBox.Items.Clear();
+                foreach (var book in Lists.Lib)
+                {
+                    if (DateTime.Compare(dates[0], book.GetDataA) <= 0 && DateTime.Compare(dates[1], book.GetDataA) >= 0)
+                        ListBox.Items.Add(FormatLB(book));
+                }
+            }
+        }
+
 
         //Add line to txt file
         public static void AppendFile(Carte x, bool append)

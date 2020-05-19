@@ -110,7 +110,7 @@ namespace EvidentaBiblioteca
             imprumut.Add(x);
 
         }
-        public string Info(int index)
+        public string InfoP(int index)
         {
             return imprumut[index].Info;
         }

@@ -149,7 +149,7 @@ namespace NivelAccesDate
                         
                         if (count >= 0)
                         for(int i=0;i<=count;i++)
-                                wFisierText.WriteLine("\t"+pers.Info(i));
+                                wFisierText.WriteLine("\t"+pers.InfoP(i));
                         wFisierText.WriteLine("\n");
 
 

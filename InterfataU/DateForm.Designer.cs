@@ -61,7 +61,7 @@
             this.MinimumSize = new System.Drawing.Size(393, 333);
             this.Name = "DateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DateForm";
+            this.Text = "d";
             this.ResumeLayout(false);
             this.PerformLayout();
 

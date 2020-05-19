@@ -1,6 +1,6 @@
-Stăpânul Inele;Tolkien;2;Actiune Istorie Aventura;5/18/2020 6:21:05 PM;5/19/2020 3:51:29 PM
-Greierele şi furnica;Marin Sorescu;3;Actiune Aventura Comedie;5/18/2020 6:21:39 PM;5/18/2020 6:21:39 PM
-Capra cu trei iezi;Ion Creanga;2;Actiune;5/18/2020 6:31:52 PM;5/18/2020 6:31:52 PM
+Stăpânul Inele;Tolkien;2;Actiune Istorie Aventura;5/12/2022 7:21:05 PM;5/19/2024 3:51:29 PM
+Greierele şi furnica;Marin Sorescu;3;Actiune Aventura Comedie;5/18/2023 6:21:39 PM;5/18/2020 6:21:39 PM
+Capra cu trei iezi;Ion Creanga;2;Actiune;5/18/2024 6:31:52 PM;5/18/2024 6:31:52 PM
 James si Piersica Uriasa;Roald Dahl;0;Actiune Tragedie;5/18/2020 6:32:57 PM;5/18/2020 6:32:57 PM
 Peter Pan Sefu;M Barrie;2;Actiune Aventura;5/18/2020 6:35:54 PM;5/19/2020 3:50:28 PM
 35 Mai;Erich Kastner;3;Istorie;5/18/2020 6:36:08 PM;5/18/2020 6:36:08 PM

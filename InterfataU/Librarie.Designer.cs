@@ -44,6 +44,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dataAdaugariiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataModificariToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filtreazaDupaDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.bttnSearch)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -186,23 +187,32 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dataAdaugariiToolStripMenuItem,
-            this.dataModificariToolStripMenuItem});
+            this.dataModificariToolStripMenuItem,
+            this.filtreazaDupaDataToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(156, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // dataAdaugariiToolStripMenuItem
             // 
             this.dataAdaugariiToolStripMenuItem.Name = "dataAdaugariiToolStripMenuItem";
-            this.dataAdaugariiToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.dataAdaugariiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dataAdaugariiToolStripMenuItem.Text = "Data Adaugarii";
             this.dataAdaugariiToolStripMenuItem.Click += new System.EventHandler(this.dataAdaugariiToolStripMenuItem_Click);
             // 
             // dataModificariToolStripMenuItem
             // 
             this.dataModificariToolStripMenuItem.Name = "dataModificariToolStripMenuItem";
-            this.dataModificariToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.dataModificariToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dataModificariToolStripMenuItem.Text = "Data Modificari";
             this.dataModificariToolStripMenuItem.Click += new System.EventHandler(this.dataModificariToolStripMenuItem_Click);
+            // 
+            // filtreazaDupaDataToolStripMenuItem
+            // 
+            this.filtreazaDupaDataToolStripMenuItem.Name = "filtreazaDupaDataToolStripMenuItem";
+            this.filtreazaDupaDataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.filtreazaDupaDataToolStripMenuItem.Text = "Filtreaza dupa Data";
+            this.filtreazaDupaDataToolStripMenuItem.Click += new System.EventHandler(this.filtreazaDupaDataToolStripMenuItem_Click);
             // 
             // Librarie
             // 
@@ -251,6 +261,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dataAdaugariiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dataModificariToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem filtreazaDupaDataToolStripMenuItem;
     }
 }
 

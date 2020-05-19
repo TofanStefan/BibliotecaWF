@@ -52,14 +52,11 @@
             this.chkIstorie = new System.Windows.Forms.CheckBox();
             this.groupBox = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.ionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.nrExemp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitlu
@@ -196,7 +193,7 @@
             // bttnUpdate
             // 
             this.bttnUpdate.Font = new System.Drawing.Font("Palatino Linotype", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnUpdate.Location = new System.Drawing.Point(92, 446);
+            this.bttnUpdate.Location = new System.Drawing.Point(92, 420);
             this.bttnUpdate.Name = "bttnUpdate";
             this.bttnUpdate.Size = new System.Drawing.Size(75, 23);
             this.bttnUpdate.TabIndex = 14;
@@ -309,30 +306,11 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(368, 24);
             this.menuStrip1.TabIndex = 17;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // ionToolStripMenuItem
-            // 
-            this.ionToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.ionToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sdToolStripMenuItem});
-            this.ionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ionToolStripMenuItem.Image")));
-            this.ionToolStripMenuItem.Name = "ionToolStripMenuItem";
-            this.ionToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
-            // 
-            // sdToolStripMenuItem
-            // 
-            this.sdToolStripMenuItem.Name = "sdToolStripMenuItem";
-            this.sdToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
-            this.sdToolStripMenuItem.Text = "Exit";
-            this.sdToolStripMenuItem.Click += new System.EventHandler(this.sdToolStripMenuItem_Click);
             // 
             // AddForm
             // 
@@ -371,8 +349,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox.ResumeLayout(false);
             this.groupBox.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,7 +379,5 @@
         private System.Windows.Forms.CheckBox chkAventura;
         private System.Windows.Forms.GroupBox groupBox;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem ionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sdToolStripMenuItem;
     }
 }

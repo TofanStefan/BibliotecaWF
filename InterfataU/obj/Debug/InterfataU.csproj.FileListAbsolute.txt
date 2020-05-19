@@ -22,3 +22,4 @@ C:\Users\Stefan\Desktop\Biblioteca2-master\InterfataU\obj\Debug\InterfataU.Error
 C:\Users\Stefan\Desktop\Biblioteca2-master\InterfataU\obj\Debug\InterfataU.SavedInstance.resources
 C:\Users\Stefan\Desktop\Biblioteca2-master\InterfataU\obj\Debug\InterfataU.Principal.resources
 C:\Users\Stefan\Desktop\Biblioteca2-master\InterfataU\obj\Debug\InterfataU.DateForm.resources
+C:\Users\Stefan\Desktop\Biblioteca2-master\InterfataU\obj\Debug\InterfataU.SortByDate.resources

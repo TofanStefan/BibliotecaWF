@@ -92,6 +92,12 @@
     <Compile Include="SavedInstance.Designer.cs">
       <DependentUpon>SavedInstance.cs</DependentUpon>
     </Compile>
+    <Compile Include="SortByDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SortByDate.Designer.cs">
+      <DependentUpon>SortByDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="StocareFactory.cs" />
     <EmbeddedResource Include="DateForm.resx">
       <DependentUpon>DateForm.cs</DependentUpon>
@@ -122,6 +128,9 @@
     </Compile>
     <EmbeddedResource Include="SavedInstance.resx">
       <DependentUpon>SavedInstance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SortByDate.resx">
+      <DependentUpon>SortByDate.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

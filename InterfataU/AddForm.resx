@@ -1122,20 +1122,6 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>181, 17</value>
   </metadata>
-  <data name="ionToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAeZJREFUOE91079Lm0Ecx/GM4iw4KUStQypolVQ66NBJLE7+A91dHJSiUmihUIeC
-        k1YEq1haf4A4FEEUxFERS1EkJZ3EFlGRirk0Mdqe7895T3jyowev4bnn7nPf55tLJDyiE6lKNGMQ+7iE
-        9TYxhJhfXjp4GcUbfMMpsviLICQHhe5BYTV+6/1gQgGT+IFrBBvL0fufGEOtDzAVPLzCMcInO73Lads4
-        WTgHrTvBOx+SiuMrVH5+YcP7lG37YOxqMmsfzxpbz3P4PW6QQItCXuAcBYt0ete8sblczj79ZOyD0mpE
-        PRpSyBrSmqzjNC1WQGwqZbsX70N6ltL2Ic+aL6pI/dlQyBFUmtvY+dG4CroXjH3+Je1C+tb+uCDNt/KJ
-        Wuv9w6VC8pPPOHklkXEb/2c5kXXNDu9TiL5LiW5CzdSJOlkVaKMqUmWa75gzrmK//hZnCtlC/m7om/Xt
-        6oGCFKLeaKPm1TP1zq9XL9cVMoLw9Xa0WL+KQlSBAorX4Df6FRKD7knBTa1DfMbYzwcZ+2i67D1RFbto
-        Ci7cAEpurKpRs8vcEfUiideoCEKqMI5f0B+teFOYbvZ3TCDqAoLBRC1e4hBXcHfHU4UZXGAHw6j2W0sH
-        L9sxCn1vEKLGb+MtnqDSL2dEIncVTbE/CtQN6AAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwz
