@@ -28,7 +28,14 @@ namespace InterfataU
 
         }
 
-        private void lblText_Click(object sender, EventArgs e)
+
+
+        private void bttnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void monthCalendar_DateChanged(object sender, DateRangeEventArgs e)
         {
 
         }

@@ -9,6 +9,9 @@ namespace EvidentaBiblioteca
     {
         DateTime dataAdaugarii;
         DateTime dataModificarii;
+        DateTime dataImprumutarii;
+        DateTime dataReturnarii;
+        public static int timpDeReturnare;//setare utilizator
         const char delimitator_fisier = ';';
         const char delimitator_fisier_secundar = ' ';
         static int ID_ = 0;
@@ -82,7 +85,6 @@ namespace EvidentaBiblioteca
                 // ("||{0}|| scrisa de ||{1}|| <<->> {2} exemplare <<->>{3} .";
             }
         }
-
         public string List_To_String_CHB(char x)
         { string line = string.Empty;
             foreach (var tip in CheckBoxes)
@@ -111,6 +113,17 @@ namespace EvidentaBiblioteca
         {
             this.CheckBoxes = list;
         }
+        public void StartDate()
+        {
+            dataImprumutarii = DateTime.Now;
+            dataReturnarii = dataImprumutarii;
+            dataReturnarii.AddDays(timpDeReturnare);
+        }
+        public int daysLeft()
+        {
+            return (dataReturnarii - dataImprumutarii).Days;
+
+        }
         public DateTime GetDataA
         {
             get { return dataAdaugarii; }
@@ -120,8 +133,6 @@ namespace EvidentaBiblioteca
             get { return dataModificarii; }
             set { dataModificarii = value; }
         }
-
-
         public bool Disponibil
         {
             get
@@ -129,12 +140,6 @@ namespace EvidentaBiblioteca
                 if (exemplare == 0) return false;
                      return true;
             }                    
-        }
-        public bool Comparatie(Carte x)
-        {
-            if (x.Exemplare > exemplare)
-                return false;
-            return true;
         }
         public int ID
         {

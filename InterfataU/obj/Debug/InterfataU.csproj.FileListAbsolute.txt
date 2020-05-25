@@ -23,3 +23,7 @@ C:\Users\Stefan\Desktop\Biblioteca2-master\InterfataU\obj\Debug\InterfataU.Saved
 C:\Users\Stefan\Desktop\Biblioteca2-master\InterfataU\obj\Debug\InterfataU.Principal.resources
 C:\Users\Stefan\Desktop\Biblioteca2-master\InterfataU\obj\Debug\InterfataU.DateForm.resources
 C:\Users\Stefan\Desktop\Biblioteca2-master\InterfataU\obj\Debug\InterfataU.SortByDate.resources
+C:\Users\Stefan\Desktop\Biblioteca2-master\InterfataU\bin\Debug\MetroFramework.Design.dll
+C:\Users\Stefan\Desktop\Biblioteca2-master\InterfataU\bin\Debug\MetroFramework.dll
+C:\Users\Stefan\Desktop\Biblioteca2-master\InterfataU\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Stefan\Desktop\Biblioteca2-master\InterfataU\obj\Debug\InterfataU.Settings.resources

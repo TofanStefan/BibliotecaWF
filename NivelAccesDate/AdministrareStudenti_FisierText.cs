@@ -2,17 +2,20 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Xml;
 
 namespace NivelAccesDate
 {
     //clasa AdministrareStudenti_FisierText implementeaza interfata IStocareData
+    
     public class AdministrareStudenti_FisierText : IStocareDate
     {
+        const string setari = "Setari.txt";
         string BooksFilePath;
         string PeopleFilePath;
         string NumeFisier { get; set; }
         string NumeFisierPersoana { get; set; }
-        public AdministrareStudenti_FisierText(string numeFisier,string numeFisierPersoana)
+        public AdministrareStudenti_FisierText(string numeFisier, string numeFisierPersoana)
         {
             this.NumeFisierPersoana = numeFisierPersoana;
             this.NumeFisier = numeFisier;
@@ -20,7 +23,66 @@ namespace NivelAccesDate
             sFisierText.Close();
             Stream FisierText = File.Open(numeFisierPersoana, FileMode.OpenOrCreate);
             FisierText.Close();
+            Stream FisierSetari = File.Open(setari, FileMode.OpenOrCreate);
+            FisierSetari.Close();
+
         }
+    
+        // write settings in txt
+        public void WriteSettings(int[]values)
+        {
+            try
+            {
+                using (StreamWriter swFisierText = new StreamWriter(setari, false))//overwrite
+                {
+
+                    string line = values[0].ToString() + ';' + values[1].ToString() + ';' + values[2].ToString();
+                    swFisierText.WriteLine(line);
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+        }
+        // returns string with setting from txt
+        public string GetSettings()
+        {
+            
+
+            try
+            {
+                using (StreamReader sr = new StreamReader(setari))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                        
+                    {
+                        string result; 
+                        result = line;
+                        return result;
+                    }
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+            return string.Empty;
+
+           
+        
+    }
+
+    
         //User friendly txt files
         public AdministrareStudenti_FisierText(string path, string numeFisierBiblioteca, string numeFisierPersoane)
         {
@@ -89,6 +151,7 @@ namespace NivelAccesDate
         public List<Carte> GetCarti()
         {
             List<Carte> book = new List<Carte>();
+            
 
             try
             {
@@ -170,6 +233,8 @@ namespace NivelAccesDate
         public List<Persoana> GetPersoane()
         {
             List<Persoana> pers = new List<Persoana>();
+            Stream FisierText = File.Open(NumeFisierPersoana, FileMode.OpenOrCreate);
+            FisierText.Close();
 
             try
             {
@@ -196,6 +261,14 @@ namespace NivelAccesDate
             }
 
             return pers;
+        }
+        public void deletePersFile()
+        {
+            File.Delete(NumeFisierPersoana);
+        }
+        public void deleteBooksFile()
+        {
+            File.Delete(NumeFisier);
         }
 
     }

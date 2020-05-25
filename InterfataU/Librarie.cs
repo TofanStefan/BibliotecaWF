@@ -19,7 +19,7 @@ namespace InterfataU
     public partial class Librarie : Form
     {
         //Constante pt antet tabel
-        
+      
         const string id = "ID", titlu = "Titlu", autor = "Autor", exemplare = "Exemplare";
         public static IStocareDate adminCarti = StocareFactory.GetAdministratorStocare();
         private const string FileBook = "Biblioteca.txt";
@@ -35,10 +35,23 @@ namespace InterfataU
             Antet.Text = antetTabel;
             Antet.Enabled = false;
             Lists.Lib = adminCarti.GetCarti();
-
+            Lists.Pers = Librarie.adminCarti.GetPersoane();
+            Settings();
             ListBox.ContextMenuStrip = contextMenuStrip1;
             showBooks();
-            
+        }
+        //get settings
+        private void Settings()
+        {
+            string setting = adminCarti.GetSettings();
+            string[] split = setting.Split(';');
+            int MaxImprumut, ReturnTime, Abateri;
+            MaxImprumut = Convert.ToInt32(split[0]);
+            ReturnTime = Convert.ToInt32(split[1]);
+            Abateri = Convert.ToInt32(split[2]);
+            Persoana.maxImprumut = MaxImprumut;
+            Persoana.nrAbateri = Abateri;
+            Carte.timpDeReturnare = ReturnTime;
         }
         //Add book Form
         private void btnAdd_Click(object sender, EventArgs e)
@@ -47,6 +60,8 @@ namespace InterfataU
             objUI.ShowDialog();
             showBooks();
         }
+
+
         //Update book Form
         private void ListBox_DoubleClick (object sender, EventArgs e)
         {
@@ -63,6 +78,8 @@ namespace InterfataU
             }
 
         }
+
+
         //Delete book
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -83,6 +100,9 @@ namespace InterfataU
                     Update_Text_File();
             }
         }
+
+        //----------------------------------------------------------------
+
         //Opens Form with people and resets books after closing it
         private void btnPeople_Click(object sender, EventArgs e)
         {
@@ -91,11 +111,58 @@ namespace InterfataU
             Update_Text_File_Pers();
             Update_Text_File();
             showBooks();
+        }
+        //Rescrie in fisier pentru persoane
+        public void Update_Text_File_Pers()
+        {
+            if (Lists.Pers.Count > 0)
+            {
+                adminCarti.AdaugaPersoana(Lists.Pers[0], false);
+                for (int i = 1; i < Lists.Pers.Count; i++)
+                    adminCarti.AdaugaPersoana(Lists.Pers[i], true);
+            }
+            else
+                adminCarti.deletePersFile();
 
-            
         }
 
-        //Save file into chose directory
+        //Delete file content and rewrite for books
+        public void Update_Text_File()
+        {
+            if (Lists.Lib.Count > 0)
+            {
+                adminCarti.AdaugaCarte(Lists.Lib[0], false);
+                for (int i = 1; i < Lists.Lib.Count; i++)
+                    adminCarti.AdaugaCarte(Lists.Lib[i], true);
+            }
+            else
+                adminCarti.deleteBooksFile();
+        }
+
+        //Prints books in ListBox after clearing it
+        public void showBooks()
+        {
+            ListBox.Items.Clear();
+            foreach (Carte book in Lists.Lib)
+            {
+                string result = book.Titlu;
+                if (book.Titlu.Length > 18)
+                {
+                    result = book.Titlu.Substring(0, 17) + "..";
+
+                }
+                string line = string.Format("{0,-4}", book.ID.ToString());
+                line += string.Format("{0,-20}", result);
+                line += string.Format("{0,-20}", book.Autor);
+                line += string.Format("{0,-20}", book.Exemplare.ToString());
+                ListBox.Items.Add(line);
+            }
+
+        }
+        
+        //-------------------------------------------------------------------
+
+        //Save file into chosen directory
         private void SaveFile_Click(object sender, EventArgs e)
         {
             var ErrorMessage = new Error("No selected directory");
@@ -122,12 +189,13 @@ namespace InterfataU
                 }
             }
         }
+        //Create 2 txt files at selected directory
         public void Create_And_Or_Write()
         {
             var file = new AdministrareStudenti_FisierText(this._Path, FileBook, FilePers);
             file.WriteFiles(Lists.Lib, Lists.Pers, true);
-
         }
+
         // Returns true if directory is selected
         public bool IsSelected()
         {
@@ -141,6 +209,22 @@ namespace InterfataU
             return false;
 
         }
+
+        // updates path of directory
+        private void btnFile_Click(object sender, EventArgs e)
+        {
+            using (var fbd = new FolderBrowserDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    this._Path = fbd.SelectedPath;
+                }
+            }
+        }
+
+        //------------------------------------------------------------------------
         //Dublura found == true /not found == false / Add Book
         static public bool CheckDublura(Carte current)
         {
@@ -175,20 +259,8 @@ namespace InterfataU
             }
         }
 
-        // updates path of directory
-        private void btnFile_Click(object sender, EventArgs e)
-        {
-                using (var fbd = new FolderBrowserDialog())
-                {
-                    DialogResult result = fbd.ShowDialog();
-
-                    if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
-                    {
-                        this._Path = fbd.SelectedPath;
-                    }
-                }
-        }
-
+       
+        //search substring and print on listBox
         private void bttnSearch_Click(object sender, EventArgs e)
         {
             if (SearchBox.Text == string.Empty)
@@ -217,26 +289,7 @@ namespace InterfataU
             }
         }
 
-        //Prints books in ListBox after clearing it
-        public void showBooks()
-        {
-            ListBox.Items.Clear();
-            foreach (Carte book in Lists.Lib)
-            {
-                string result = book.Titlu;
-                if (book.Titlu.Length > 18)
-                {
-                    result = book.Titlu.Substring(0, 17)+"..";
-                   
-                }
-                string line = string.Format("{0,-4}", book.ID.ToString());
-                line += string.Format("{0,-20}", result);
-                line += string.Format("{0,-20}", book.Autor);
-                line += string.Format("{0,-20}", book.Exemplare.ToString());
-                ListBox.Items.Add(line);
-            }
-
-        }
+        // returns book in format for List Box
         public string FormatLB(Carte book)
         {
 
@@ -272,10 +325,7 @@ namespace InterfataU
             }
         }
 
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
 
-        }
 
         private void filtreazaDupaDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -294,31 +344,21 @@ namespace InterfataU
             }
         }
 
+        private void bttnSettings_Click(object sender, EventArgs e)
+        {
+            var obj = new Settings();
+            obj.ShowDialog();
+           
+            
+            
+        }
 
         //Add line to txt file
         public static void AppendFile(Carte x, bool append)
         {
             adminCarti.AdaugaCarte(x, append);
         }
-        //Delete file content and rewrite
-        public void Update_Text_File()
-        {
-            if (Lists.Lib.Count > 0)
-            {
-                adminCarti.AdaugaCarte(Lists.Lib[0], false);
-                for (int i = 1; i < Lists.Lib.Count; i++)
-                    adminCarti.AdaugaCarte(Lists.Lib[i], true);
-            }
-        }
-        public void Update_Text_File_Pers()
-        {
-            if (Lists.Pers.Count > 0)
-            {
-                adminCarti.AdaugaPersoana(Lists.Pers[0], false);
-                for (int i = 1; i < Lists.Pers.Count; i++)
-                    adminCarti.AdaugaPersoana(Lists.Pers[i], true);
-            }
-        }
+  
     }
     //Static class for lists
     public static class Lists

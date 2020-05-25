@@ -22,7 +22,6 @@ namespace InterfataU
             InitializeComponent();
             FormatTabel();
             PanelDesign();
-            Lists.Pers = Librarie.adminCarti.GetPersoane();
             printPers();
         }
         private void PanelDesign()
@@ -37,7 +36,7 @@ namespace InterfataU
         private void FormatTabel()
         {
             string antetTabel_pers = string.Format("{0,-6}{1,-29}{2,-10}", id, nume, status);
-            string antetTabel_books = string.Format("{0,-3}{1,-18}{2}", id, titlu, autor);
+            string antetTabel_books = string.Format("{0,-3}{1,-20}{2}", id, titlu, autor);
             string antetTabel_books_left = string.Format("{0,-3}{1,-20}{2,-17}{3}", id, titlu, autor, exemplare);
             AntetBooks.Text = antetTabel_books;
             AntetBooks.Enabled = false;
@@ -62,12 +61,21 @@ namespace InterfataU
             if (bttnAdd_Book_Left.Visible == false)
                 if (listBox_Name.SelectedIndex >= 0)
                 {
+
                     ID_ = listBox_Name.SelectedIndex;
+                    Lists.Pers[ID_].Abateri_();
+                    string line = "    Aceasta persoana are " + Lists.Pers[ID_].Abateri+"/"+Persoana.nrAbateri+ " abateri.";
+                    textBoxAbateri.Text = line;
+
                     Print_Books_Pers();
                 }
 
                 else
+                {
                     listBox_Book.Items.Clear();
+                    textBoxAbateri.Text = string.Empty;
+                }
+
 
         }
         private void bttnCancel_Books_Click(object sender, EventArgs e)
@@ -102,6 +110,7 @@ namespace InterfataU
                         if (Lists.Pers[ID_].dublura(Lists.Lib[id]) == false)
                         {
                             Lists.Lib[id].Exemplare -= 1;
+                            Lists.Lib[id].StartDate();
                             Lists.Pers[ID_].Adaugare(Lists.Lib[id]);
                             string result = Lists.Lib[id].Titlu;
                             if (Lists.Lib[id].Titlu.Length > 19)
@@ -145,13 +154,11 @@ namespace InterfataU
                 int index = listBox_Name.SelectedIndex;
                 listBox_Name.Items.RemoveAt(index);
                 Lists.Pers.RemoveAt(index);
-                Persoana.ID_ = Persoana.ID_ - 1;
+                Persoana._ID = Persoana._ID - 1;
                 if (index < Lists.Pers.Count)
                 {
                     for (int i = index; i < Lists.Pers.Count; i++)
-                    {
-                        Lists.Pers[index].ID_Pers -= 1;
-                    }
+                        Lists.Pers[i].ID_Pers -= 1;
                     listBox_Name.Items.Clear();
                     printPers();
                 }
@@ -246,7 +253,13 @@ namespace InterfataU
 
         }
 
-      
+        private void listBox_Book_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(listBox_Book.SelectedIndex>=0)
+            {
+
+            }
+        }
 
         private void designChange_AddPers()
         {

@@ -12,5 +12,9 @@ namespace NivelAccesDate
         List<Carte> GetCarti();
         List<Persoana> GetPersoane();
         void WriteFiles(List<Carte> Book, List<Persoana> Pers, bool append);
+        void WriteSettings(int[] values);
+        string GetSettings();
+        void deletePersFile();
+       void deleteBooksFile();
     }
 }

@@ -7,15 +7,17 @@ namespace EvidentaBiblioteca
 {
     public class Persoana : Carte
     {  
-        const int maxImprumut = 3;
+        public static int maxImprumut = 3; //Setari utilizator  
+        public static int nrAbateri = 3;   //Setari utilizator
+        public int Abateri { get; set; } = 0;
         const char principalSeparator = ';';
         const char secondarySeparator = ',';
         const char bookSeparator = ' ';
         const char bookSeparator2 = '.';
-        private static int _ID = 1; // ID persoana static 
-        private int id; // id persoana obiect curent 
+        public static int _ID = 1; // ID persoana static 
+        int id=0; // id persoana obiect curent 
         public string Status { get; set; }
-        public int ID_Carte { get; set; } = 0; //id carte max 3 carti (pentru afisare)
+        public int ID_Carte { get; set; } = 0; //id carte imprumutata  (pentru afisare)
         string numePers { get; set; }
         List<Carte> imprumut = new List<Carte>();
         //CONSTRUCTOR CE PRIMESTE NUMELE PERSOANEI
@@ -34,7 +36,7 @@ namespace EvidentaBiblioteca
             numePers =separateByPrincipalSeparator[0];
             Status=separateByPrincipalSeparator[1] ;
             int index = 0;
-            if (separateByPrincipalSeparator.Length > 2)
+            if (separateByPrincipalSeparator.Length > 3)
             {
                 string[] separateByBookSeparator = separateByPrincipalSeparator[2].Split(secondarySeparator);
                 string[] bookItems;
@@ -51,10 +53,21 @@ namespace EvidentaBiblioteca
                         Adaugare(current);
                     }
                 }
+                Abateri = Convert.ToInt32(separateByPrincipalSeparator[3]);
+            }
+            else
+            {
+                Abateri = Convert.ToInt32(separateByPrincipalSeparator[2]);
 
             }
 
 
+        }
+        public void Abateri_()
+        {
+                foreach (var book in imprumut)
+                    if (book.daysLeft() <= 0)
+                        Abateri++;
         }
         public string ReturnTxtFormat()
         {
@@ -72,7 +85,7 @@ namespace EvidentaBiblioteca
                    line = line + format;
                 index++;
             }
-            string finalLine = numePers + ';' + Status+ line;
+            string finalLine = numePers + ';' + Status+ line+';'+this.Abateri;
             return finalLine;
         }
         public Carte BookAtIndex(int value) => imprumut[value];
@@ -84,24 +97,14 @@ namespace EvidentaBiblioteca
             get { return numePers; }
             set { numePers = value; }
         }
-        //ID static 
-        public static int ID_
-        {
-            set { _ID = value; }
-            get { return _ID; }
-        }
+   
         //ID obiect
         public int ID_Pers
         {
-            get { return id; }
+            get { return this.id; }
             set { this.id = value; }
         }
   
-        //Un singur exemplar per carte imprumutata
-        public void setExemplare_To1(int poz)
-        {
-            imprumut[poz].Exemplare = 1;
-        }
       
         //Adaugare carte imprumutata obiect 
         public void Adaugare(Carte x)

@@ -16,7 +16,9 @@ namespace InterfataU
         List<DateTime> dates = new List<DateTime>();
         public SortByDate()
         {
+            
             InitializeComponent();
+            //panel.BackColor = Color.FromArgb(124, Color.Black);
         }
 
         private void bttnOk_Click(object sender, EventArgs e)
@@ -27,6 +29,10 @@ namespace InterfataU
         }
 
         public List<DateTime> GetDates=>dates;
-     
+
+        private void bttnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

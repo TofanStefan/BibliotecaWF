@@ -32,20 +32,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(People));
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxAbateri = new System.Windows.Forms.TextBox();
+            this.btnDelete_Book = new System.Windows.Forms.Button();
+            this.bttnCancel_Books = new System.Windows.Forms.Button();
+            this.bttnAdd_Book = new System.Windows.Forms.Button();
+            this.bttnDelete = new System.Windows.Forms.Button();
+            this.bttnAdd_Book_Left = new System.Windows.Forms.Button();
+            this.bttnAdd = new System.Windows.Forms.Button();
             this.listBox_Book = new System.Windows.Forms.ListBox();
             this.lbl_Books = new System.Windows.Forms.Label();
             this.listBox_Name = new System.Windows.Forms.ListBox();
-            this.bttnAdd_Book_Left = new System.Windows.Forms.Button();
             this.AntetBooks = new System.Windows.Forms.TextBox();
             this.lblAdd_Books = new System.Windows.Forms.Label();
             this.AntetPers = new System.Windows.Forms.TextBox();
             this.AntetBooks_Left = new System.Windows.Forms.TextBox();
-            this.bttnCancel_Books = new System.Windows.Forms.Button();
-            this.bttnAdd_Book = new System.Windows.Forms.Button();
-            this.btnDelete_Book = new System.Windows.Forms.Button();
             this.lbl_Librarie = new System.Windows.Forms.Label();
-            this.bttnDelete = new System.Windows.Forms.Button();
-            this.bttnAdd = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.bttnCancel = new System.Windows.Forms.PictureBox();
@@ -56,6 +57,8 @@
             this.txtBox_Name = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cartiImprumutateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bttnCancel)).BeginInit();
@@ -75,24 +78,125 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.metroDateTime1);
+            this.panel1.Controls.Add(this.textBoxAbateri);
+            this.panel1.Controls.Add(this.btnDelete_Book);
+            this.panel1.Controls.Add(this.bttnCancel_Books);
+            this.panel1.Controls.Add(this.bttnAdd_Book);
+            this.panel1.Controls.Add(this.bttnDelete);
+            this.panel1.Controls.Add(this.bttnAdd_Book_Left);
+            this.panel1.Controls.Add(this.bttnAdd);
             this.panel1.Controls.Add(this.listBox_Book);
             this.panel1.Controls.Add(this.lbl_Books);
             this.panel1.Controls.Add(this.listBox_Name);
-            this.panel1.Controls.Add(this.bttnAdd_Book_Left);
             this.panel1.Controls.Add(this.AntetBooks);
             this.panel1.Controls.Add(this.lblAdd_Books);
             this.panel1.Controls.Add(this.AntetPers);
             this.panel1.Controls.Add(this.AntetBooks_Left);
-            this.panel1.Controls.Add(this.bttnCancel_Books);
-            this.panel1.Controls.Add(this.bttnAdd_Book);
-            this.panel1.Controls.Add(this.btnDelete_Book);
             this.panel1.Controls.Add(this.lbl_Librarie);
-            this.panel1.Controls.Add(this.bttnDelete);
-            this.panel1.Controls.Add(this.bttnAdd);
             this.panel1.Location = new System.Drawing.Point(29, 33);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(724, 392);
             this.panel1.TabIndex = 22;
+            // 
+            // textBoxAbateri
+            // 
+            this.textBoxAbateri.Enabled = false;
+            this.textBoxAbateri.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAbateri.ForeColor = System.Drawing.Color.Red;
+            this.textBoxAbateri.Location = new System.Drawing.Point(392, 316);
+            this.textBoxAbateri.Name = "textBoxAbateri";
+            this.textBoxAbateri.Size = new System.Drawing.Size(308, 21);
+            this.textBoxAbateri.TabIndex = 31;
+            // 
+            // btnDelete_Book
+            // 
+            this.btnDelete_Book.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDelete_Book.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete_Book.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete_Book.Image")));
+            this.btnDelete_Book.Location = new System.Drawing.Point(546, 344);
+            this.btnDelete_Book.Name = "btnDelete_Book";
+            this.btnDelete_Book.Size = new System.Drawing.Size(68, 32);
+            this.btnDelete_Book.TabIndex = 30;
+            this.btnDelete_Book.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete_Book.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDelete_Book.UseCompatibleTextRendering = true;
+            this.btnDelete_Book.UseVisualStyleBackColor = false;
+            this.btnDelete_Book.Click += new System.EventHandler(this.btnDelete_Book_Click);
+            // 
+            // bttnCancel_Books
+            // 
+            this.bttnCancel_Books.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.bttnCancel_Books.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnCancel_Books.Image = ((System.Drawing.Image)(resources.GetObject("bttnCancel_Books.Image")));
+            this.bttnCancel_Books.Location = new System.Drawing.Point(175, 344);
+            this.bttnCancel_Books.Name = "bttnCancel_Books";
+            this.bttnCancel_Books.Size = new System.Drawing.Size(68, 32);
+            this.bttnCancel_Books.TabIndex = 29;
+            this.bttnCancel_Books.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bttnCancel_Books.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bttnCancel_Books.UseVisualStyleBackColor = false;
+            this.bttnCancel_Books.Visible = false;
+            this.bttnCancel_Books.Click += new System.EventHandler(this.bttnCancel_Books_Click);
+            // 
+            // bttnAdd_Book
+            // 
+            this.bttnAdd_Book.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.bttnAdd_Book.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnAdd_Book.Image = ((System.Drawing.Image)(resources.GetObject("bttnAdd_Book.Image")));
+            this.bttnAdd_Book.Location = new System.Drawing.Point(457, 344);
+            this.bttnAdd_Book.Name = "bttnAdd_Book";
+            this.bttnAdd_Book.Size = new System.Drawing.Size(68, 32);
+            this.bttnAdd_Book.TabIndex = 28;
+            this.bttnAdd_Book.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bttnAdd_Book.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bttnAdd_Book.UseVisualStyleBackColor = false;
+            this.bttnAdd_Book.Click += new System.EventHandler(this.bttnAdd_Book_Click);
+            // 
+            // bttnDelete
+            // 
+            this.bttnDelete.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.bttnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnDelete.Image = ((System.Drawing.Image)(resources.GetObject("bttnDelete.Image")));
+            this.bttnDelete.Location = new System.Drawing.Point(175, 344);
+            this.bttnDelete.Name = "bttnDelete";
+            this.bttnDelete.Size = new System.Drawing.Size(68, 32);
+            this.bttnDelete.TabIndex = 27;
+            this.bttnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bttnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bttnDelete.UseCompatibleTextRendering = true;
+            this.bttnDelete.UseVisualStyleBackColor = false;
+            this.bttnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // bttnAdd_Book_Left
+            // 
+            this.bttnAdd_Book_Left.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.bttnAdd_Book_Left.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnAdd_Book_Left.Image = ((System.Drawing.Image)(resources.GetObject("bttnAdd_Book_Left.Image")));
+            this.bttnAdd_Book_Left.Location = new System.Drawing.Point(48, 344);
+            this.bttnAdd_Book_Left.Name = "bttnAdd_Book_Left";
+            this.bttnAdd_Book_Left.Size = new System.Drawing.Size(68, 32);
+            this.bttnAdd_Book_Left.TabIndex = 25;
+            this.bttnAdd_Book_Left.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bttnAdd_Book_Left.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bttnAdd_Book_Left.UseVisualStyleBackColor = false;
+            this.bttnAdd_Book_Left.Visible = false;
+            this.bttnAdd_Book_Left.Click += new System.EventHandler(this.bttnAdd_Book_Left_Click);
+            // 
+            // bttnAdd
+            // 
+            this.bttnAdd.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.bttnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnAdd.Image = ((System.Drawing.Image)(resources.GetObject("bttnAdd.Image")));
+            this.bttnAdd.Location = new System.Drawing.Point(89, 344);
+            this.bttnAdd.Name = "bttnAdd";
+            this.bttnAdd.Size = new System.Drawing.Size(68, 32);
+            this.bttnAdd.TabIndex = 26;
+            this.bttnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bttnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bttnAdd.UseVisualStyleBackColor = false;
+            this.bttnAdd.Click += new System.EventHandler(this.bttnAdd_Click);
             // 
             // listBox_Book
             // 
@@ -102,8 +206,9 @@
             this.listBox_Book.ItemHeight = 14;
             this.listBox_Book.Location = new System.Drawing.Point(392, 68);
             this.listBox_Book.Name = "listBox_Book";
-            this.listBox_Book.Size = new System.Drawing.Size(308, 270);
+            this.listBox_Book.Size = new System.Drawing.Size(308, 228);
             this.listBox_Book.TabIndex = 23;
+            this.listBox_Book.SelectedIndexChanged += new System.EventHandler(this.listBox_Book_SelectedIndexChanged);
             // 
             // lbl_Books
             // 
@@ -130,17 +235,6 @@
             this.listBox_Name.Size = new System.Drawing.Size(308, 270);
             this.listBox_Name.TabIndex = 0;
             this.listBox_Name.SelectedIndexChanged += new System.EventHandler(this.listBox_Name_SelectedIndexChanged);
-            // 
-            // bttnAdd_Book_Left
-            // 
-            this.bttnAdd_Book_Left.Location = new System.Drawing.Point(60, 344);
-            this.bttnAdd_Book_Left.Name = "bttnAdd_Book_Left";
-            this.bttnAdd_Book_Left.Size = new System.Drawing.Size(98, 32);
-            this.bttnAdd_Book_Left.TabIndex = 19;
-            this.bttnAdd_Book_Left.Text = "Add";
-            this.bttnAdd_Book_Left.UseVisualStyleBackColor = true;
-            this.bttnAdd_Book_Left.Visible = false;
-            this.bttnAdd_Book_Left.Click += new System.EventHandler(this.bttnAdd_Book_Left_Click);
             // 
             // AntetBooks
             // 
@@ -184,37 +278,6 @@
             this.AntetBooks_Left.TabIndex = 17;
             this.AntetBooks_Left.Visible = false;
             // 
-            // bttnCancel_Books
-            // 
-            this.bttnCancel_Books.Location = new System.Drawing.Point(193, 344);
-            this.bttnCancel_Books.Name = "bttnCancel_Books";
-            this.bttnCancel_Books.Size = new System.Drawing.Size(98, 32);
-            this.bttnCancel_Books.TabIndex = 16;
-            this.bttnCancel_Books.Text = "Cancel";
-            this.bttnCancel_Books.UseVisualStyleBackColor = true;
-            this.bttnCancel_Books.Visible = false;
-            this.bttnCancel_Books.Click += new System.EventHandler(this.bttnCancel_Books_Click);
-            // 
-            // bttnAdd_Book
-            // 
-            this.bttnAdd_Book.Location = new System.Drawing.Point(432, 344);
-            this.bttnAdd_Book.Name = "bttnAdd_Book";
-            this.bttnAdd_Book.Size = new System.Drawing.Size(98, 32);
-            this.bttnAdd_Book.TabIndex = 6;
-            this.bttnAdd_Book.Text = "Add";
-            this.bttnAdd_Book.UseVisualStyleBackColor = true;
-            this.bttnAdd_Book.Click += new System.EventHandler(this.bttnAdd_Book_Click);
-            // 
-            // btnDelete_Book
-            // 
-            this.btnDelete_Book.Location = new System.Drawing.Point(565, 344);
-            this.btnDelete_Book.Name = "btnDelete_Book";
-            this.btnDelete_Book.Size = new System.Drawing.Size(98, 32);
-            this.btnDelete_Book.TabIndex = 7;
-            this.btnDelete_Book.Text = "Delete";
-            this.btnDelete_Book.UseVisualStyleBackColor = true;
-            this.btnDelete_Book.Click += new System.EventHandler(this.btnDelete_Book_Click);
-            // 
             // lbl_Librarie
             // 
             this.lbl_Librarie.AutoSize = true;
@@ -228,26 +291,6 @@
             this.lbl_Librarie.TabIndex = 2;
             this.lbl_Librarie.Text = "PERSOANE";
             this.lbl_Librarie.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // bttnDelete
-            // 
-            this.bttnDelete.Location = new System.Drawing.Point(193, 344);
-            this.bttnDelete.Name = "bttnDelete";
-            this.bttnDelete.Size = new System.Drawing.Size(98, 32);
-            this.bttnDelete.TabIndex = 5;
-            this.bttnDelete.Text = "Delete";
-            this.bttnDelete.UseVisualStyleBackColor = true;
-            this.bttnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // bttnAdd
-            // 
-            this.bttnAdd.Location = new System.Drawing.Point(60, 344);
-            this.bttnAdd.Name = "bttnAdd";
-            this.bttnAdd.Size = new System.Drawing.Size(98, 32);
-            this.bttnAdd.TabIndex = 4;
-            this.bttnAdd.Text = "Add";
-            this.bttnAdd.UseVisualStyleBackColor = true;
-            this.bttnAdd.Click += new System.EventHandler(this.bttnAdd_Click);
             // 
             // panel2
             // 
@@ -353,14 +396,37 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cartiImprumutateToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(173, 26);
             // 
             // cartiImprumutateToolStripMenuItem
             // 
             this.cartiImprumutateToolStripMenuItem.Name = "cartiImprumutateToolStripMenuItem";
-            this.cartiImprumutateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cartiImprumutateToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.cartiImprumutateToolStripMenuItem.Text = "Carti Imprumutate";
-          
+            // 
+            // metroDateTime1
+            // 
+            this.metroDateTime1.Checked = false;
+            this.metroDateTime1.CustomFormat = "                  MM/dd/yyyy hh:mm:ss";
+            this.metroDateTime1.Enabled = false;
+            this.metroDateTime1.FontWeight = MetroFramework.MetroDateTimeWeight.Bold;
+            this.metroDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.metroDateTime1.Location = new System.Drawing.Point(392, 288);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime1.Name = "metroDateTime1";
+            this.metroDateTime1.Size = new System.Drawing.Size(308, 29);
+            this.metroDateTime1.TabIndex = 32;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.Black;
+            this.textBox1.Location = new System.Drawing.Point(392, 267);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(308, 21);
+            this.textBox1.TabIndex = 33;
+            this.textBox1.Text = "   Aceasta carte trebuie returnata pana ";
             // 
             // People
             // 
@@ -370,9 +436,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(779, 450);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.panel2);
             this.MaximumSize = new System.Drawing.Size(795, 489);
             this.MinimumSize = new System.Drawing.Size(795, 489);
             this.Name = "People";
@@ -401,15 +467,9 @@
         private System.Windows.Forms.ListBox listBox_Name;
         private System.Windows.Forms.TextBox AntetBooks;
         private System.Windows.Forms.Label lblAdd_Books;
-        private System.Windows.Forms.Button bttnAdd_Book_Left;
         private System.Windows.Forms.TextBox AntetPers;
         private System.Windows.Forms.TextBox AntetBooks_Left;
-        private System.Windows.Forms.Button bttnCancel_Books;
-        private System.Windows.Forms.Button bttnAdd_Book;
-        private System.Windows.Forms.Button btnDelete_Book;
         private System.Windows.Forms.Label lbl_Librarie;
-        private System.Windows.Forms.Button bttnDelete;
-        private System.Windows.Forms.Button bttnAdd;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox userIcon;
         private System.Windows.Forms.Label lblAdd_Person;
@@ -420,5 +480,14 @@
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cartiImprumutateToolStripMenuItem;
+        private System.Windows.Forms.Button bttnAdd_Book_Left;
+        private System.Windows.Forms.Button bttnAdd;
+        private System.Windows.Forms.Button bttnDelete;
+        private System.Windows.Forms.Button btnDelete_Book;
+        private System.Windows.Forms.Button bttnCancel_Books;
+        private System.Windows.Forms.Button bttnAdd_Book;
+        private System.Windows.Forms.TextBox textBoxAbateri;
+        private MetroFramework.Controls.MetroDateTime metroDateTime1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
